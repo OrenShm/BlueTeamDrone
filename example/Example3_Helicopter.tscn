@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://bpgkoykhb386o"]
+[gd_scene load_steps=85 format=3 uid="uid://bpgkoykhb386o"]
 
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlSteering.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlLandingGear.tscn" id="2"]
@@ -16,7 +16,10 @@
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/LandingGear/LandingGear.tscn" id="17"]
 [ext_resource type="Texture2D" uid="uid://bo81iive6ulsl" path="res://example/textures/kenney_prototypetextures/PNG/Light/texture_06.png" id="17_4lio0"]
 [ext_resource type="PackedScene" uid="uid://bu2hixfhu8ndm" path="res://example/ui/UIEnginePower/UIEnginePower.tscn" id="18"]
+[ext_resource type="PackedScene" uid="uid://dmdnterh7eqmf" path="res://assets/idf_barrier/barrier1.fbx" id="18_c5anp"]
+[ext_resource type="PackedScene" uid="uid://c48ga2wbive73" path="res://assets/old_road/old road.fbx" id="18_sx8kn"]
 [ext_resource type="PackedScene" uid="uid://nhbm7re0glcb" path="res://example/scenes/Airplane/visuals/LandingGear/LandingGear.tscn" id="19"]
+[ext_resource type="PackedScene" uid="uid://ullya0gk7a55" path="res://assets/fence2/fance.FBX" id="19_kkok6"]
 [ext_resource type="PackedScene" uid="uid://d0mgf4yjnwxgl" path="res://addons/simplified_flightsim/Aircraft/Aircraft.tscn" id="20"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/EnergyContainer/EnergyContainer.tscn" id="22"]
 [ext_resource type="AudioStream" uid="uid://cvxa8h3yftguj" path="res://example/sfx/aircraft_modules/landing_gear/deploy.wav" id="24"]
@@ -1464,6 +1467,21 @@ mesh = SubResource("PrismMesh_ys0wt")
 [node name="CollisionShape2" type="CollisionShape3D" parent="Scenario/EnterBlocks/Block7/House4"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_37yei")
+
+[node name="road1" parent="Scenario/EnterBlocks" instance=ExtResource("18_sx8kn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -236, 0, -154)
+
+[node name="IsraelBoarder" type="Node3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00184631, -0.0388641, 0.0842743)
+
+[node name="barrier1" parent="Scenario/IsraelBoarder" instance=ExtResource("18_c5anp")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -248.975, 0, -162.176)
+
+[node name="barrier2" parent="Scenario/IsraelBoarder" instance=ExtResource("18_c5anp")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -219.238, 0, -162.952)
+
+[node name="fence1" parent="Scenario/IsraelBoarder" instance=ExtResource("19_kkok6")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -215.218, 0, -162.917)
 
 [node name="Runway" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -216.931)
