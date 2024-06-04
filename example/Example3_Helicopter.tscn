@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://bpgkoykhb386o"]
+[gd_scene load_steps=74 format=3 uid="uid://bpgkoykhb386o"]
 
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlSteering.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlLandingGear.tscn" id="2"]
@@ -18,13 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://bu2hixfhu8ndm" path="res://example/ui/UIEnginePower/UIEnginePower.tscn" id="18"]
 [ext_resource type="PackedScene" uid="uid://c31ajgolcc6h6" path="res://example/scenes/GazaLayout/GazaLayer.tscn" id="18_su1wk"]
 [ext_resource type="PackedScene" uid="uid://nhbm7re0glcb" path="res://example/scenes/Airplane/visuals/LandingGear/LandingGear.tscn" id="19"]
-[ext_resource type="PackedScene" uid="uid://uqiknq40ippn" path="res://vehicles/nagmash.tscn" id="19_1oo08"]
+[ext_resource type="PackedScene" uid="uid://blupttwov1xx4" path="res://example/scenes/Convoy/Convoy.tscn" id="19_3ni2m"]
 [ext_resource type="PackedScene" uid="uid://d0mgf4yjnwxgl" path="res://addons/simplified_flightsim/Aircraft/Aircraft.tscn" id="20"]
-[ext_resource type="PackedScene" uid="uid://bu2w4durp7w2a" path="res://vehicles/convoy.tscn" id="20_3pc6i"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/EnergyContainer/EnergyContainer.tscn" id="22"]
 [ext_resource type="AudioStream" uid="uid://cvxa8h3yftguj" path="res://example/sfx/aircraft_modules/landing_gear/deploy.wav" id="24"]
 [ext_resource type="AudioStream" uid="uid://ch1k8klfyw0mq" path="res://example/sfx/aircraft_modules/landing_gear/stow.wav" id="25"]
-[ext_resource type="Script" path="res://example/PathFollow3D.gd" id="25_e4jpd"]
 [ext_resource type="Script" path="res://example/Example3_Helicopter.gd" id="26"]
 [ext_resource type="Texture2D" uid="uid://d3w7kvckn8jf6" path="res://example/textures/faux_asphalt/ground_asphalt_synth_12.png" id="30"]
 [ext_resource type="PackedScene" uid="uid://begsn48c5vlu6" path="res://example/scenes/Airplane/visuals/HeliPropeller/HeliPropeller.tscn" id="31"]
@@ -149,17 +147,6 @@ size = Vector3(12, 30, 15)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1y3o8"]
 points = PackedVector3Array(6, 15, 7.5, -6, 15, 7.5, 6, -15, 7.5, 6, 15, -7.5, -6, 15, -7.5, -6, -15, 7.5, 6, -15, -7.5, -6, -15, -7.5)
-
-[sub_resource type="Curve3D" id="Curve3D_frbyq"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -232.277, 0, -164.891, -5.903, 0, -5.412, 5.903, 0, 4.512, -230.984, 0, -97.231, 0, 0, 0, 0, 0, 0, -152.741, 0, -95.0633),
-"tilts": PackedFloat32Array(0, 0, 0)
-}
-point_count = 3
-
-[sub_resource type="PrismMesh" id="PrismMesh_lc766"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_07d2x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pdutf"]
 albedo_texture = ExtResource("30")
@@ -666,27 +653,7 @@ shape = SubResource("ConvexPolygonShape3D_1y3o8")
 
 [node name="GazasLayer" parent="Scenario" instance=ExtResource("18_su1wk")]
 
-[node name="Path3D" type="Path3D" parent="Scenario"]
-curve = SubResource("Curve3D_frbyq")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Scenario/Path3D"]
-transform = Transform3D(-0.999817, 0, -0.0191068, 0, 1, 0, 0.0191068, 0, -0.999817, -232.277, 0, -164.891)
-script = ExtResource("25_e4jpd")
-set_speed = 0.1
-
-[node name="nagmash" parent="Scenario/Path3D/PathFollow3D" instance=ExtResource("19_1oo08")]
-
-[node name="convoy" parent="Scenario/Path3D/PathFollow3D" instance=ExtResource("20_3pc6i")]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Scenario/Path3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -231.888, 0.579625, -153.446)
-mesh = SubResource("PrismMesh_lc766")
-
-[node name="RigidBody3D" type="RigidBody3D" parent="Scenario/Path3D/MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Scenario/Path3D/MeshInstance3D/RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0149231, -9.53674e-07, -0.0146637)
-shape = SubResource("BoxShape3D_07d2x")
+[node name="Convoy" parent="Scenario" instance=ExtResource("19_3ni2m")]
 
 [node name="Runway" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -216.931)

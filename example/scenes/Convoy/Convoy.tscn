@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://blupttwov1xx4"]
+
+[ext_resource type="Script" path="res://example/PathFollow3D.gd" id="1_onvnh"]
+[ext_resource type="PackedScene" uid="uid://uqiknq40ippn" path="res://vehicles/nagmash.tscn" id="2_x7g8p"]
+[ext_resource type="PackedScene" uid="uid://bu2w4durp7w2a" path="res://vehicles/convoy.tscn" id="3_tjkpb"]
+
+[sub_resource type="Curve3D" id="Curve3D_sgmcc"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -232.277, 0, -164.891, -5.903, 0, -5.412, 5.903, 0, 4.512, -230.984, 0, -97.231, 0, 0, 0, 0, 0, 0, -152.741, 0, -95.0633),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="PrismMesh" id="PrismMesh_qviba"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fefue"]
+
+[node name="Convoy" type="Node3D"]
+
+[node name="ConvoyPath3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_sgmcc")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="ConvoyPath3D"]
+transform = Transform3D(-0.999817, 0, -0.0191068, 0, 1, 0, 0.0191068, 0, -0.999817, -232.277, 0, -164.891)
+script = ExtResource("1_onvnh")
+set_speed = 0.1
+
+[node name="nagmash" parent="ConvoyPath3D/PathFollow3D" instance=ExtResource("2_x7g8p")]
+
+[node name="convoy" parent="ConvoyPath3D/PathFollow3D" instance=ExtResource("3_tjkpb")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ConvoyPath3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -231.888, 0.579625, -153.446)
+mesh = SubResource("PrismMesh_qviba")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="ConvoyPath3D/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ConvoyPath3D/MeshInstance3D/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0149231, -9.53674e-07, -0.0146637)
+shape = SubResource("BoxShape3D_fefue")
