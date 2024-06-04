@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu2w4durp7w2a"]
+
+[ext_resource type="PackedScene" uid="uid://uqiknq40ippn" path="res://vehicles/nagmash.tscn" id="1_0t1f8"]
+[ext_resource type="PackedScene" uid="uid://dsr578y3el43f" path="res://vehicles/tank.tscn" id="2_4nah8"]
+[ext_resource type="PackedScene" uid="uid://7w8n0vbuh1pi" path="res://vehicles/truck.tscn" id="3_1snri"]
+
+[node name="convoy" type="Node3D"]
+
+[node name="tank" parent="." instance=ExtResource("2_4nah8")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 7.46767)
+
+[node name="truck" parent="." instance=ExtResource("3_1snri")]
+transform = Transform3D(0.999984, 0.0047891, -0.00297257, -0.00478131, 0.999985, 0.0026213, 0.00298509, -0.00260704, 0.999992, 0, 0, 0)
+
+[node name="nagmash" parent="." instance=ExtResource("1_0t1f8")]
+transform = Transform3D(-0.749907, 0, -0.0118405, 0, 0.75, 0, 0.0118405, 0, -0.749907, 0, 0, -4.44113)

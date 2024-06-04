@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://df5ycxbdl4ov8"
+path="res://.godot/imported/5678.obj-8cc8b69c1bbccfac57c444444c4db043.mesh"
+
+[deps]
+
+files=["res://.godot/imported/5678.obj-8cc8b69c1bbccfac57c444444c4db043.mesh"]
+
+source_file="res://vehicles/nagmash/5678.obj"
+dest_files=["res://.godot/imported/5678.obj-8cc8b69c1bbccfac57c444444c4db043.mesh", "res://.godot/imported/5678.obj-8cc8b69c1bbccfac57c444444c4db043.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

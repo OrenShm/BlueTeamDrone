@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://uqiknq40ippn"]
+
+[ext_resource type="ArrayMesh" uid="uid://df5ycxbdl4ov8" path="res://vehicles/nagmash/5678.obj" id="1_3e604"]
+[ext_resource type="Script" path="res://vehicles/Area3D.gd" id="2_fxair"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_glg05"]
+
+[node name="nagmash" type="MeshInstance3D"]
+transform = Transform3D(-0.499938, 0, -0.00789367, 0, 0.5, 0, 0.00789367, 0, -0.499938, 3.13231, -0.236356, 6.69826)
+mesh = ExtResource("1_3e604")
+skeleton = NodePath("../../../..")
+
+[node name="Area3D" type="Area3D" parent="." groups=["nagmash"]]
+script = ExtResource("2_fxair")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(4, 0, 4.44089e-16, 0, -1.74846e-07, -4, 0, 4, -1.74846e-07, 0.00309038, 1.31465, -0.195724)
+shape = SubResource("CapsuleShape3D_glg05")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
