@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://bpgkoykhb386o"]
+[gd_scene load_steps=85 format=3 uid="uid://bpgkoykhb386o"]
 
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlSteering.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlLandingGear.tscn" id="2"]
@@ -21,7 +21,9 @@
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/EnergyContainer/EnergyContainer.tscn" id="22"]
 [ext_resource type="AudioStream" uid="uid://cvxa8h3yftguj" path="res://example/sfx/aircraft_modules/landing_gear/deploy.wav" id="24"]
 [ext_resource type="AudioStream" uid="uid://ch1k8klfyw0mq" path="res://example/sfx/aircraft_modules/landing_gear/stow.wav" id="25"]
+[ext_resource type="Script" path="res://example/PathFollow3D.gd" id="25_e4jpd"]
 [ext_resource type="Script" path="res://example/Example3_Helicopter.gd" id="26"]
+[ext_resource type="ArrayMesh" uid="uid://b36tictvn0lp5" path="res://vehicles/apc.obj" id="26_b2lfj"]
 [ext_resource type="Texture2D" uid="uid://d3w7kvckn8jf6" path="res://example/textures/faux_asphalt/ground_asphalt_synth_12.png" id="30"]
 [ext_resource type="PackedScene" uid="uid://begsn48c5vlu6" path="res://example/scenes/Airplane/visuals/HeliPropeller/HeliPropeller.tscn" id="31"]
 
@@ -175,6 +177,13 @@ albedo_color = Color(0.839216, 0.72549, 0.611765, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_da5uk"]
 albedo_color = Color(0.839216, 0.72549, 0.611765, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_frbyq"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -232.277, 0, -164.891, 0, 0, 0, 0, 0, 0, -233.382, 0, -94.9132, 0, 0, 0, 0, 0, 0, -152.741, 0, -95.0633),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pdutf"]
 albedo_texture = ExtResource("30")
@@ -1464,6 +1473,18 @@ mesh = SubResource("PrismMesh_ys0wt")
 [node name="CollisionShape2" type="CollisionShape3D" parent="Scenario/EnterBlocks/Block7/House4"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_37yei")
+
+[node name="Path3D" type="Path3D" parent="Scenario"]
+curve = SubResource("Curve3D_frbyq")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Scenario/Path3D"]
+transform = Transform3D(-0.999875, 0, 0.0157873, 0, 1, 0, -0.0157873, 0, -0.999875, -232.277, 0, -164.891)
+script = ExtResource("25_e4jpd")
+
+[node name="nagmash" type="MeshInstance3D" parent="Scenario/Path3D/PathFollow3D"]
+transform = Transform3D(-0.999875, 0, -0.0157873, 0, 1, 0, 0.0157873, 0, -0.999875, 3.13231, 3.97425, 6.69829)
+mesh = ExtResource("26_b2lfj")
+skeleton = NodePath("../../../..")
 
 [node name="Runway" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -216.931)
