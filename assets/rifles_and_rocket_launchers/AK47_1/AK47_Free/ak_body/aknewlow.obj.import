@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bx6dlf1p1tjlw"
+path="res://.godot/imported/aknewlow.obj-6157a71746fbc2d7dbfac6cafe8c72de.mesh"
+
+[deps]
+
+files=["res://.godot/imported/aknewlow.obj-6157a71746fbc2d7dbfac6cafe8c72de.mesh"]
+
+source_file="res://assets/rifles_and_rocket_launchers/AK47_1/AK47_Free/ak_body/aknewlow.obj"
+dest_files=["res://.godot/imported/aknewlow.obj-6157a71746fbc2d7dbfac6cafe8c72de.mesh", "res://.godot/imported/aknewlow.obj-6157a71746fbc2d7dbfac6cafe8c72de.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://f2gug7470c0g"
+path="res://.godot/imported/ak_magazine_low.obj-bb830173ea3174cda9f1375cc9de190a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ak_magazine_low.obj-bb830173ea3174cda9f1375cc9de190a.mesh"]
+
+source_file="res://assets/rifles_and_rocket_launchers/AK47_1/AK47_Free/ak_mag/ak_magazine_low.obj"
+dest_files=["res://.godot/imported/ak_magazine_low.obj-bb830173ea3174cda9f1375cc9de190a.mesh", "res://.godot/imported/ak_magazine_low.obj-bb830173ea3174cda9f1375cc9de190a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

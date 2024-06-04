@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dnwpg3dx5o334"
+path="res://.godot/imported/AK47.obj-fcf7a83cf0c8b3f95933bfdf8faec556.mesh"
+
+[deps]
+
+files=["res://.godot/imported/AK47.obj-fcf7a83cf0c8b3f95933bfdf8faec556.mesh"]
+
+source_file="res://assets/rifles_and_rocket_launchers/AK47_2/AK47/scenes/AK47.obj"
+dest_files=["res://.godot/imported/AK47.obj-fcf7a83cf0c8b3f95933bfdf8faec556.mesh", "res://.godot/imported/AK47.obj-fcf7a83cf0c8b3f95933bfdf8faec556.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
