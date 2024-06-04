@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dq5ujweu3jk2"
+path="res://.godot/imported/ak_pull_low.obj-73c48775f8bf66adc3ed12d0b0d3316c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ak_pull_low.obj-73c48775f8bf66adc3ed12d0b0d3316c.mesh"]
+
+source_file="res://assets/rifles_and_rocket_launchers/AK47_1/AK47_Free/ak_pull/ak_pull_low.obj"
+dest_files=["res://.godot/imported/ak_pull_low.obj-73c48775f8bf66adc3ed12d0b0d3316c.mesh", "res://.godot/imported/ak_pull_low.obj-73c48775f8bf66adc3ed12d0b0d3316c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
