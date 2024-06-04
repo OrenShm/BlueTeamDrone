@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7d7squ15lrr6"]
+
+[ext_resource type="ArrayMesh" uid="uid://dcvn1fl7rign" path="res://assets/rockets_and_missiles/hellfire/agm-114HellFire/Files/AGM-114HellFire.obj" id="1_wklgi"]
+[ext_resource type="Script" path="res://example/scenes/Ambush/AmbushAntiAir.gd" id="2_vtq81"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p4uga"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4yvvs"]
+size = Vector3(0.470703, 0.761719, 8.17749)
+
+[node name="AntiAir_Hellfire1" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 10, 0)
+mesh = ExtResource("1_wklgi")
+script = ExtResource("2_vtq81")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_p4uga")
+gravity_scale = 0.0
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.282714, -0.264127, -0.0455055)
+shape = SubResource("BoxShape3D_4yvvs")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
