@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://blupttwov1xx4"]
+
+[ext_resource type="Script" path="res://example/PathFollow3D.gd" id="1_32wxn"]
+[ext_resource type="PackedScene" uid="uid://bu2w4durp7w2a" path="res://vehicles/convoy.tscn" id="2_1jcux"]
+
+[sub_resource type="Curve3D" id="Curve3D_sgmcc"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -232.277, 0, -164.891, -5.903, 0, -5.412, 5.903, 0, 4.512, -230.984, 0, -97.231, 0, 0, 0, 0, 0, 0, -152.741, 0, -95.0633),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[node name="PathFollowExample" type="Node3D"]
+
+[node name="ConvoyPath3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_sgmcc")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="ConvoyPath3D"]
+transform = Transform3D(-0.999817, 0, -0.0191068, 0, 1, 0, 0.0191068, 0, -0.999817, -232.277, 0, -164.891)
+script = ExtResource("1_32wxn")
+set_speed = 0.1
+
+[node name="convoy" parent="." instance=ExtResource("2_1jcux")]
+transform = Transform3D(-0.999817, 0, -0.0191068, 0, 1, 0, 0.0191068, 0, -0.999817, 0, 0, 0)
