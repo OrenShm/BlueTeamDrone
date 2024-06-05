@@ -13,7 +13,7 @@ signal update_interface(values)
 @export var EngineSoundStart: AudioStream
 @export var EngineSoundStop: AudioStream
 
-@export var FuelRate: float = 1.0 # Fuel units per second, at max power
+@export var FuelRate: float = 0.0 # Fuel units per second, at max power
 
 # You don't really *need* to use this property, as any node can receive the
 # signals. This is just a helper to automatically connect all possible signals
