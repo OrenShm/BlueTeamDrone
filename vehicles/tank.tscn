@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dsr578y3el43f"]
+[gd_scene load_steps=8 format=3 uid="uid://b1f3is36fyaau"]
 
 [ext_resource type="ArrayMesh" uid="uid://m4bxjdigpg2i" path="res://vehicles/tank/zrckbermvpc0-t55/t55/t55.obj" id="1_1k552"]
 [ext_resource type="Script" path="res://vehicles/tank.gd" id="2_yk4st"]
