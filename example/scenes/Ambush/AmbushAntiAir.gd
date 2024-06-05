@@ -15,7 +15,7 @@ func _ready():
 func _on_launch_delayed():
 	print("On AntiAir done delay")
 	#$RigidBody3D.paused = false
-	#shoot_projectile(Vector3(-222, -20, -87), Vector3(0, 2, -262))
+	shoot_projectile(Vector3(-7, 8, -235), Vector3(0, 2, -262))
 	
 
 func _physics_process(delta: float) -> void:

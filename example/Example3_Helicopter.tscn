@@ -657,7 +657,7 @@ shape = SubResource("ConvexPolygonShape3D_1y3o8")
 [node name="Convoy" parent="Scenario" instance=ExtResource("19_3ni2m")]
 
 [node name="AntiAir_Hellfire1" parent="Scenario" instance=ExtResource("19_tgerr")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, 8, -235)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7, 6, -235)
 
 [node name="Runway" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -216.931)
