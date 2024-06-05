@@ -21,5 +21,4 @@ shape = SubResource("BoxShape3D_4yvvs")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
-one_shot = true
 autostart = true

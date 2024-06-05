@@ -1,22 +1,27 @@
 extends MeshInstance3D
 
-var muzzle_velocity: float = 25
-var gravity: Vector3 = Vector3(0, -9.8, 0)
+var muzzle_velocity: float = 5
+var gravity: Vector3 = Vector3(0, 0, 0)
+#var gravity: Vector3 = Vector3(0, -9.8, 0)
 var velocity: Vector3 = Vector3.ZERO
+var missile_start_location: Vector3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("On AntiAir ready")
-	$Timer.connect("timeout", Callable(self, "_on_launch_delayed"))
+	missile_start_location = self.position
+	
+	$Timer.connect("timeout", Callable(self, "_on_launch_timer_elapsed"))
 	#$RigidBody3D.paused = true
 	#shoot_projectile(Vector3(-222, -20, -87), Vector3(0, 2, -262))
 	pass # Replace with function body.
 
-func _on_launch_delayed():
+func _on_launch_timer_elapsed():
 	print("On AntiAir done delay")
 	#$RigidBody3D.paused = false
-	shoot_projectile(Vector3(-7, 8, -235), Vector3(0, 2, -262))
-	
+	var airplaneNode = get_node_or_null("/root/Example/Aircraft")
+	shoot_projectile(missile_start_location, airplaneNode.position)
+
 
 func _physics_process(delta: float) -> void:
 	velocity += gravity * delta
