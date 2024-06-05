@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvjox4cd58kgy"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_qviba"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fefue"]
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -231.888, 0.579625, -153.446)
+mesh = SubResource("PrismMesh_qviba")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0149231, -9.53674e-07, -0.0146637)
+shape = SubResource("BoxShape3D_fefue")
