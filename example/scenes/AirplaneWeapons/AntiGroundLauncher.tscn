@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://8y7mnih7xjo7"]
+
+[ext_resource type="Script" path="res://example/scenes/AirplaneWeapons/AntiGroundLauncher.gd" id="1_b25xs"]
+
+[node name="AntiGroundLauncher" type="Node3D"]
+script = ExtResource("1_b25xs")
