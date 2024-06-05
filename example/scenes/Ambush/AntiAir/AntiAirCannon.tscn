@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcs18mc4ikbf8"]
+
+[ext_resource type="Script" path="res://example/scenes/Ambush/AntiAir/AntiAirCannon.gd" id="1_6vuaj"]
+[ext_resource type="PackedScene" uid="uid://cpbeevno2h3o8" path="res://assets/rifles_and_rocket_launchers/RPG_1/Rpg 7/Rpg 7 3D Models/Rpg7.FBX" id="2_1yu0v"]
+
+[node name="AntiAirCannon" type="Node3D"]
+script = ExtResource("1_6vuaj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="RpgRocketLuncher" parent="." instance=ExtResource("2_1yu0v")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

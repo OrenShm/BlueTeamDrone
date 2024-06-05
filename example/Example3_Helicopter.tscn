@@ -19,8 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://c31ajgolcc6h6" path="res://example/scenes/GazaLayout/GazaLayer.tscn" id="18_su1wk"]
 [ext_resource type="PackedScene" uid="uid://nhbm7re0glcb" path="res://example/scenes/Airplane/visuals/LandingGear/LandingGear.tscn" id="19"]
 [ext_resource type="PackedScene" uid="uid://blupttwov1xx4" path="res://example/scenes/Convoy/Convoy.tscn" id="19_3ni2m"]
-[ext_resource type="PackedScene" uid="uid://b7d7squ15lrr6" path="res://example/scenes/Ambush/AmbushScene.tscn" id="19_tgerr"]
 [ext_resource type="PackedScene" uid="uid://d0mgf4yjnwxgl" path="res://addons/simplified_flightsim/Aircraft/Aircraft.tscn" id="20"]
+[ext_resource type="PackedScene" uid="uid://bcs18mc4ikbf8" path="res://example/scenes/Ambush/AntiAir/AntiAirCannon.tscn" id="20_yaf8o"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/EnergyContainer/EnergyContainer.tscn" id="22"]
 [ext_resource type="AudioStream" uid="uid://cvxa8h3yftguj" path="res://example/sfx/aircraft_modules/landing_gear/deploy.wav" id="24"]
 [ext_resource type="AudioStream" uid="uid://ch1k8klfyw0mq" path="res://example/sfx/aircraft_modules/landing_gear/stow.wav" id="25"]
@@ -656,8 +656,8 @@ shape = SubResource("ConvexPolygonShape3D_1y3o8")
 
 [node name="Convoy" parent="Scenario" instance=ExtResource("19_3ni2m")]
 
-[node name="AntiAir_Hellfire1" parent="Scenario" instance=ExtResource("19_tgerr")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -263, 6, -129)
+[node name="AntiAirCannon" parent="Scenario" instance=ExtResource("20_yaf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.763, 1, -203.101)
 
 [node name="Runway" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -216.931)
