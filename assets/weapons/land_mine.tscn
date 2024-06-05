@@ -4,7 +4,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fefue"]
 
-[node name="MeshInstance3D" type="MeshInstance3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -231.888, 0.579625, -153.446)
 mesh = SubResource("PrismMesh_qviba")
 
