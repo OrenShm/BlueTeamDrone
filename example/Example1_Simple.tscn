@@ -1,8 +1,9 @@
-[gd_scene load_steps=74 format=3 uid="uid://di4mmbdu6qiv1"]
+[gd_scene load_steps=75 format=3 uid="uid://di4mmbdu6qiv1"]
 
 [ext_resource type="Script" path="res://example/Example1_Simple.gd" id="1"]
 [ext_resource type="AudioStream" uid="uid://cvxa8h3yftguj" path="res://example/sfx/aircraft_modules/landing_gear/deploy.wav" id="2"]
 [ext_resource type="AudioStream" uid="uid://ch1k8klfyw0mq" path="res://example/sfx/aircraft_modules/landing_gear/stow.wav" id="3"]
+[ext_resource type="PackedScene" uid="uid://8y7mnih7xjo7" path="res://example/scenes/AirplaneWeapons/AntiGroundLauncher.tscn" id="3_3ngt8"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/EnergyContainer/EnergyContainer.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://dsel16gi76dnm" path="res://example/ui/UIEnergyContainer/UIFuelLevel.tscn" id="5"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlSteering.tscn" id="6"]
@@ -209,6 +210,8 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.591909, 2.33686)
 mesh = SubResource("8")
 skeleton = NodePath("../..")
+
+[node name="AntiGroundLauncher" parent="Aircraft/Model/StaticParts" instance=ExtResource("3_3ngt8")]
 
 [node name="MovingParts" type="Node3D" parent="Aircraft/Model"]
 
