@@ -1,14 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7d7squ15lrr6"]
+[gd_scene load_steps=5 format=3 uid="uid://b7d7squ15lrr6"]
 
-[ext_resource type="ArrayMesh" uid="uid://dcvn1fl7rign" path="res://assets/rockets_and_missiles/hellfire/agm-114HellFire/Files/AGM-114HellFire.obj" id="1_wklgi"]
+[ext_resource type="ArrayMesh" path="res://assets/rockets_and_missiles/AIM120D Missile/Files/AIM120D.obj" id="1_vhj44"]
 [ext_resource type="Script" path="res://example/scenes/Ambush/AntiAir/AntiAirMissile.gd" id="2_5uorj"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnb03"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.877197, 0.271598, 0.317886, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_4yvvs"]
-size = Vector3(1.5, 1.5, 8.5)
+size = Vector3(0.874725, 0.682602, 16.6929)
 
 [node name="AntiAirMissile" type="MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-mesh = ExtResource("1_wklgi")
+transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, 0, 0, 0)
+mesh = ExtResource("1_vhj44")
+surface_material_override/0 = SubResource("StandardMaterial3D_wnb03")
 script = ExtResource("2_5uorj")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
@@ -16,5 +21,5 @@ mass = 500.0
 freeze = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.383, -0.323, 0.2)
+transform = Transform3D(5, 0, 0, 0, -5, 4.37114e-07, 0, -4.37114e-07, -5, 2.59574, 5.02276, -4.4867)
 shape = SubResource("BoxShape3D_4yvvs")

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://7w8n0vbuh1pi" path="res://vehicles/truck.tscn" id="3_1snri"]
 
 [node name="convoy" type="Node3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="tank" parent="." instance=ExtResource("2_4nah8")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 7.46767)

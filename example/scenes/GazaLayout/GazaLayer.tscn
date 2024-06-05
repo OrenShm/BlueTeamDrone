@@ -43,10 +43,10 @@ albedo_color = Color(0.839216, 0.72549, 0.611765, 1)
 
 [node name="EnterBlocks" type="Node3D" parent="."]
 
-[node name="Block1" type="Node3D" parent="EnterBlocks"]
+[node name="Block1" type="Node3D" parent="EnterBlocks" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -270.136, 0, -138.669)
 
-[node name="House1" type="StaticBody3D" parent="EnterBlocks/Block1"]
+[node name="House1" type="StaticBody3D" parent="EnterBlocks/Block1" groups=["targets"]]
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block1/House1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -67,7 +67,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House5" type="StaticBody3D" parent="EnterBlocks/Block1"]
+[node name="House5" type="StaticBody3D" parent="EnterBlocks/Block1" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2372, 0, -5.54142)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block1/House5"]
@@ -89,7 +89,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House2" type="StaticBody3D" parent="EnterBlocks/Block1"]
+[node name="House2" type="StaticBody3D" parent="EnterBlocks/Block1" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.0455)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block1/House2"]
@@ -111,7 +111,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House3" type="StaticBody3D" parent="EnterBlocks/Block1"]
+[node name="House3" type="StaticBody3D" parent="EnterBlocks/Block1" groups=["targets"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.26552, 0, -10.2473)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block1/House3"]
@@ -133,7 +133,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House4" type="StaticBody3D" parent="EnterBlocks/Block1"]
+[node name="House4" type="StaticBody3D" parent="EnterBlocks/Block1" groups=["targets"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.0725, 0, 5.81823)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block1/House4"]
@@ -155,10 +155,10 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="Block2" type="Node3D" parent="EnterBlocks"]
+[node name="Block2" type="Node3D" parent="EnterBlocks" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -271.121, 0, -108.617)
 
-[node name="House1" type="StaticBody3D" parent="EnterBlocks/Block2"]
+[node name="House1" type="StaticBody3D" parent="EnterBlocks/Block2" groups=["targets"]]
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block2/House1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -179,7 +179,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House5" type="StaticBody3D" parent="EnterBlocks/Block2"]
+[node name="House5" type="StaticBody3D" parent="EnterBlocks/Block2" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2372, 0, -5.54142)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block2/House5"]
@@ -201,7 +201,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House2" type="StaticBody3D" parent="EnterBlocks/Block2"]
+[node name="House2" type="StaticBody3D" parent="EnterBlocks/Block2" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.0455)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block2/House2"]
@@ -223,7 +223,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House3" type="StaticBody3D" parent="EnterBlocks/Block2"]
+[node name="House3" type="StaticBody3D" parent="EnterBlocks/Block2" groups=["targets"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.26552, 0, -10.2473)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block2/House3"]
@@ -245,7 +245,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House4" type="StaticBody3D" parent="EnterBlocks/Block2"]
+[node name="House4" type="StaticBody3D" parent="EnterBlocks/Block2" groups=["targets"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.0725, 0, 5.81823)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block2/House4"]
@@ -267,10 +267,10 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="Block3" type="Node3D" parent="EnterBlocks"]
+[node name="Block3" type="Node3D" parent="EnterBlocks" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -259.298, 0, -77.0879)
 
-[node name="House1" type="StaticBody3D" parent="EnterBlocks/Block3"]
+[node name="House1" type="StaticBody3D" parent="EnterBlocks/Block3" groups=["targets"]]
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block3/House1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -291,7 +291,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House5" type="StaticBody3D" parent="EnterBlocks/Block3"]
+[node name="House5" type="StaticBody3D" parent="EnterBlocks/Block3" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2372, 0, -5.54142)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block3/House5"]
@@ -313,7 +313,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House2" type="StaticBody3D" parent="EnterBlocks/Block3"]
+[node name="House2" type="StaticBody3D" parent="EnterBlocks/Block3" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.0455)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block3/House2"]
@@ -335,7 +335,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House3" type="StaticBody3D" parent="EnterBlocks/Block3"]
+[node name="House3" type="StaticBody3D" parent="EnterBlocks/Block3" groups=["targets"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.26552, 0, -10.2473)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block3/House3"]
@@ -357,7 +357,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House4" type="StaticBody3D" parent="EnterBlocks/Block3"]
+[node name="House4" type="StaticBody3D" parent="EnterBlocks/Block3" groups=["targets"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.0725, 0, 5.81823)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block3/House4"]
@@ -379,10 +379,10 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="Block4" type="Node3D" parent="EnterBlocks"]
+[node name="Block4" type="Node3D" parent="EnterBlocks" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -226.291, 0, -72.6541)
 
-[node name="House1" type="StaticBody3D" parent="EnterBlocks/Block4"]
+[node name="House1" type="StaticBody3D" parent="EnterBlocks/Block4" groups=["targets"]]
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block4/House1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -403,7 +403,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House5" type="StaticBody3D" parent="EnterBlocks/Block4"]
+[node name="House5" type="StaticBody3D" parent="EnterBlocks/Block4" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2372, 0, -5.54142)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block4/House5"]
@@ -425,7 +425,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House2" type="StaticBody3D" parent="EnterBlocks/Block4"]
+[node name="House2" type="StaticBody3D" parent="EnterBlocks/Block4" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.0455)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block4/House2"]
@@ -447,7 +447,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House3" type="StaticBody3D" parent="EnterBlocks/Block4"]
+[node name="House3" type="StaticBody3D" parent="EnterBlocks/Block4" groups=["targets"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.26552, 0, -10.2473)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block4/House3"]
@@ -469,7 +469,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House4" type="StaticBody3D" parent="EnterBlocks/Block4"]
+[node name="House4" type="StaticBody3D" parent="EnterBlocks/Block4" groups=["targets"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.0725, 0, 5.81823)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block4/House4"]
@@ -491,10 +491,10 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="Block5" type="Node3D" parent="EnterBlocks"]
+[node name="Block5" type="Node3D" parent="EnterBlocks" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -211.787, 0, -144.931)
 
-[node name="House1" type="StaticBody3D" parent="EnterBlocks/Block5"]
+[node name="House1" type="StaticBody3D" parent="EnterBlocks/Block5" groups=["targets"]]
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block5/House1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -515,7 +515,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House5" type="StaticBody3D" parent="EnterBlocks/Block5"]
+[node name="House5" type="StaticBody3D" parent="EnterBlocks/Block5" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2372, 0, -5.54142)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block5/House5"]
@@ -537,7 +537,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House2" type="StaticBody3D" parent="EnterBlocks/Block5"]
+[node name="House2" type="StaticBody3D" parent="EnterBlocks/Block5" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.0455)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block5/House2"]
@@ -559,7 +559,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House3" type="StaticBody3D" parent="EnterBlocks/Block5"]
+[node name="House3" type="StaticBody3D" parent="EnterBlocks/Block5" groups=["targets"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.26552, 0, -10.2473)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block5/House3"]
@@ -581,7 +581,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House4" type="StaticBody3D" parent="EnterBlocks/Block5"]
+[node name="House4" type="StaticBody3D" parent="EnterBlocks/Block5" groups=["targets"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.0725, 0, 5.81823)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block5/House4"]
@@ -603,10 +603,10 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="Block6" type="Node3D" parent="EnterBlocks"]
+[node name="Block6" type="Node3D" parent="EnterBlocks" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -209.87, 0, -115.481)
 
-[node name="House1" type="StaticBody3D" parent="EnterBlocks/Block6"]
+[node name="House1" type="StaticBody3D" parent="EnterBlocks/Block6" groups=["targets"]]
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block6/House1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -627,7 +627,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House5" type="StaticBody3D" parent="EnterBlocks/Block6"]
+[node name="House5" type="StaticBody3D" parent="EnterBlocks/Block6" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2372, 0, -5.54142)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block6/House5"]
@@ -649,7 +649,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House2" type="StaticBody3D" parent="EnterBlocks/Block6"]
+[node name="House2" type="StaticBody3D" parent="EnterBlocks/Block6" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.0455)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block6/House2"]
@@ -671,7 +671,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House3" type="StaticBody3D" parent="EnterBlocks/Block6"]
+[node name="House3" type="StaticBody3D" parent="EnterBlocks/Block6" groups=["targets"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.26552, 0, -10.2473)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block6/House3"]
@@ -693,7 +693,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House4" type="StaticBody3D" parent="EnterBlocks/Block6"]
+[node name="House4" type="StaticBody3D" parent="EnterBlocks/Block6" groups=["targets"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.0725, 0, 5.81823)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block6/House4"]
@@ -715,10 +715,10 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="Block7" type="Node3D" parent="EnterBlocks"]
+[node name="Block7" type="Node3D" parent="EnterBlocks" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -193.693, 0, -69.2392)
 
-[node name="House1" type="StaticBody3D" parent="EnterBlocks/Block7"]
+[node name="House1" type="StaticBody3D" parent="EnterBlocks/Block7" groups=["targets"]]
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block7/House1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -739,7 +739,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House5" type="StaticBody3D" parent="EnterBlocks/Block7"]
+[node name="House5" type="StaticBody3D" parent="EnterBlocks/Block7" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2372, 0, -5.54142)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block7/House5"]
@@ -761,7 +761,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House2" type="StaticBody3D" parent="EnterBlocks/Block7"]
+[node name="House2" type="StaticBody3D" parent="EnterBlocks/Block7" groups=["targets"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.0455)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block7/House2"]
@@ -783,7 +783,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House3" type="StaticBody3D" parent="EnterBlocks/Block7"]
+[node name="House3" type="StaticBody3D" parent="EnterBlocks/Block7" groups=["targets"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.26552, 0, -10.2473)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block7/House3"]
@@ -805,7 +805,7 @@ mesh = SubResource("PrismMesh_5oun3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
 shape = SubResource("ConvexPolygonShape3D_qny28")
 
-[node name="House4" type="StaticBody3D" parent="EnterBlocks/Block7"]
+[node name="House4" type="StaticBody3D" parent="EnterBlocks/Block7" groups=["targets"]]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.0725, 0, 5.81823)
 
 [node name="House1" type="MeshInstance3D" parent="EnterBlocks/Block7/House4"]
