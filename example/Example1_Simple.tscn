@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://di4mmbdu6qiv1"]
+[gd_scene load_steps=74 format=3 uid="uid://di4mmbdu6qiv1"]
 
 [ext_resource type="Script" path="res://example/Example1_Simple.gd" id="1"]
 [ext_resource type="AudioStream" uid="uid://cvxa8h3yftguj" path="res://example/sfx/aircraft_modules/landing_gear/deploy.wav" id="2"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://c4dncgm8qjt7u" path="res://example/ui/UIFlaps/UIFlaps.tscn" id="23"]
 [ext_resource type="PackedScene" uid="uid://blupttwov1xx4" path="res://example/scenes/PathFollowExample/PathFollowExample.tscn" id="23_fksu0"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Flaps/Flaps.tscn" id="24"]
+[ext_resource type="PackedScene" uid="uid://bcs18mc4ikbf8" path="res://example/scenes/Ambush/AntiAir/AntiAirCannon.tscn" id="24_2mg1j"]
 [ext_resource type="PackedScene" uid="uid://b8s77ar81hq22" path="res://example/ui/UILandingGear/UILandingGear.tscn" id="25"]
 [ext_resource type="PackedScene" uid="uid://dhg4sb4ifrvh8" path="res://example/ui/UIAttitude/UIAttitude.tscn" id="26"]
 [ext_resource type="AudioStream" uid="uid://cqkqskpah2gx7" path="res://example/sfx/aircraft_modules/flaps/flap_loop.ogg" id="27"]
@@ -595,6 +596,9 @@ shape = SubResource("18")
 [node name="GazasLayer" parent="Scenario" instance=ExtResource("22_3g21e")]
 
 [node name="Convoy" parent="Scenario" instance=ExtResource("23_fksu0")]
+
+[node name="AntiAirCannon" parent="Scenario" instance=ExtResource("24_2mg1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -195.25, 0, -128.446)
 
 [node name="Runway" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -216.931)

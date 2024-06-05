@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://bpgkoykhb386o"]
+[gd_scene load_steps=80 format=3 uid="uid://bpgkoykhb386o"]
 
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlSteering.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlLandingGear.tscn" id="2"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://example/PathFollow3D.gd" id="19_efru5"]
 [ext_resource type="PackedScene" uid="uid://d0mgf4yjnwxgl" path="res://addons/simplified_flightsim/Aircraft/Aircraft.tscn" id="20"]
 [ext_resource type="PackedScene" uid="uid://bu2w4durp7w2a" path="res://vehicles/convoy.tscn" id="20_dsf4p"]
+[ext_resource type="PackedScene" uid="uid://bcs18mc4ikbf8" path="res://example/scenes/Ambush/AntiAir/AntiAirCannon.tscn" id="20_yaf8o"]
 [ext_resource type="PackedScene" uid="uid://cnl5gfvri0d4l" path="res://assets/weapons/pagaz.tscn" id="21_1pjnw"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/EnergyContainer/EnergyContainer.tscn" id="22"]
 [ext_resource type="PackedScene" uid="uid://dvjox4cd58kgy" path="res://assets/weapons/land_mine.tscn" id="22_lpu1i"]
@@ -669,7 +670,7 @@ shape = SubResource("ConvexPolygonShape3D_1y3o8")
 curve = SubResource("Curve3D_db5kg")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Scenario/Path3D"]
-transform = Transform3D(-0.999979, 0, -0.00641643, 0, 1, 0, 0.00641643, 0, -0.999979, -236.251, 0, -161.581)
+transform = Transform3D(-0.999979, 0, -0.00642239, 0, 1, 0, 0.00642239, 0, -0.999979, -236.251, 0, -161.581)
 loop = false
 script = ExtResource("19_efru5")
 
@@ -693,6 +694,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.511, 0.579625, -144.045)
 
 [node name="MeshInstance3D2" parent="Scenario" instance=ExtResource("22_lpu1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.905, 0.579625, -135.311)
+
+[node name="AntiAirCannon" parent="Scenario" instance=ExtResource("20_yaf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -195.093, 1, -132.039)
 
 [node name="Runway" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -216.931)
