@@ -3,6 +3,7 @@ extends MeshInstance3D
 var max_health = 1000
 var current_health = max_health
 var damage = 250
+@export var time_to_reload : float = 5
 
 func _ready():
 	pass
