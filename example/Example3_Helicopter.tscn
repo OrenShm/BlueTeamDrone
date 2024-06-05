@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://bpgkoykhb386o"]
+[gd_scene load_steps=86 format=3 uid="uid://bpgkoykhb386o"]
 
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlSteering.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlLandingGear.tscn" id="2"]
@@ -17,7 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://bo81iive6ulsl" path="res://example/textures/kenney_prototypetextures/PNG/Light/texture_06.png" id="17_4lio0"]
 [ext_resource type="PackedScene" uid="uid://bu2hixfhu8ndm" path="res://example/ui/UIEnginePower/UIEnginePower.tscn" id="18"]
 [ext_resource type="ArrayMesh" uid="uid://rjbnks7lglvc" path="res://assets/topography/yl5cwt6eglq8-Rockwall/Rockwall.obj" id="18_llb0s"]
+[ext_resource type="Texture2D" uid="uid://ducuti3ifqc7e" path="res://assets/topography/Stoney_dirt.jpg" id="18_ohjm2"]
 [ext_resource type="PackedScene" uid="uid://c31ajgolcc6h6" path="res://example/scenes/GazaLayout/GazaLayer.tscn" id="18_su1wk"]
+[ext_resource type="Texture2D" uid="uid://duqv3k6g2hdgl" path="res://assets/topography/q7dl0kza.png" id="18_t84k3"]
 [ext_resource type="PackedScene" uid="uid://nhbm7re0glcb" path="res://example/scenes/Airplane/visuals/LandingGear/LandingGear.tscn" id="19"]
 [ext_resource type="PackedScene" uid="uid://blupttwov1xx4" path="res://example/scenes/PathFollowExample/PathFollowExample.tscn" id="19_3ni2m"]
 [ext_resource type="PackedScene" uid="uid://d0mgf4yjnwxgl" path="res://addons/simplified_flightsim/Aircraft/Aircraft.tscn" id="20"]
@@ -69,6 +71,10 @@ albedo_color = Color(0.78, 0.52689, 0.3198, 1)
 albedo_texture = ExtResource("17_4lio0")
 uv1_scale = Vector3(10, 10, 10)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6s1b"]
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("18_ohjm2")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j27jw"]
 albedo_color = Color(1, 1, 0.811765, 1)
 albedo_texture = ExtResource("17_4lio0")
@@ -81,9 +87,21 @@ size = Vector2(640, 640)
 [sub_resource type="BoxShape3D" id="BoxShape3D_vcv7a"]
 size = Vector3(640, 2, 640)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0juae"]
+albedo_texture = ExtResource("18_t84k3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q8lau"]
+albedo_texture = ExtResource("18_t84k3")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ogwqu"]
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.906843, 0.386371, 0.169165, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhgjl"]
+albedo_texture = ExtResource("18_t84k3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xe7f"]
+albedo_texture = ExtResource("18_t84k3")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nkhbx"]
 vertex_color_use_as_albedo = true
@@ -98,8 +116,9 @@ size = Vector3(10, 3, 6)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8usvl"]
 points = PackedVector3Array(-5, -1.5, -3, -5, 1.5, -3, 5, -1.5, -3, -5, -1.5, 3, -5, 1.5, 3, 5, 1.5, -3, 5, -1.5, 3, 5, 1.5, 3)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jolpo"]
-albedo_color = Color(0.666667, 0.4, 0.337255, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kufes"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.856067, 0.856067, 0.856067, 1)
 
 [sub_resource type="PrismMesh" id="PrismMesh_dsvbn"]
 size = Vector3(7, 2, 10)
@@ -109,6 +128,9 @@ points = PackedVector3Array(3.5, -1, 5, 0, 1, 5, -3.5, -1, 5, 3.5, -1, -5, 0, 1,
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ad7ag"]
 albedo_color = Color(0.839216, 0.72549, 0.611765, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jolpo"]
+albedo_color = Color(0.666667, 0.4, 0.337255, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m72e7"]
 albedo_color = Color(0.839216, 0.72549, 0.611765, 1)
@@ -342,6 +364,7 @@ directional_shadow_max_distance = 200.0
 
 [node name="Floor" type="MeshInstance3D" parent="Scenario"]
 material_override = SubResource("StandardMaterial3D_wa4yv")
+material_overlay = SubResource("StandardMaterial3D_u6s1b")
 mesh = SubResource("PlaneMesh_yjfxc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scenario/Floor"]
@@ -352,6 +375,8 @@ shape = SubResource("BoxShape3D_vcv7a")
 
 [node name="Wall1" type="MeshInstance3D" parent="Scenario"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 160, -597)
+material_override = SubResource("StandardMaterial3D_0juae")
+material_overlay = SubResource("StandardMaterial3D_q8lau")
 mesh = ExtResource("18_llb0s")
 surface_material_override/0 = SubResource("StandardMaterial3D_ogwqu")
 
@@ -363,6 +388,8 @@ shape = SubResource("BoxShape3D_vcv7a")
 
 [node name="Wall2" type="MeshInstance3D" parent="Scenario"]
 transform = Transform3D(-1, -4.37114e-08, -7.57103e-08, 0, 0.866025, -0.5, 8.74228e-08, -0.5, -0.866025, 0, 160, 597)
+material_override = SubResource("StandardMaterial3D_fhgjl")
+material_overlay = SubResource("StandardMaterial3D_0xe7f")
 mesh = ExtResource("18_llb0s")
 surface_material_override/0 = SubResource("StandardMaterial3D_nkhbx")
 
@@ -374,6 +401,8 @@ shape = SubResource("BoxShape3D_vcv7a")
 
 [node name="Wall3" type="MeshInstance3D" parent="Scenario"]
 transform = Transform3D(-4.37114e-08, 0.5, 0.866025, 0, 0.866025, -0.5, -1, -2.18557e-08, -3.78552e-08, -597, 160, 0)
+material_override = SubResource("StandardMaterial3D_fhgjl")
+material_overlay = SubResource("StandardMaterial3D_0xe7f")
 mesh = ExtResource("18_llb0s")
 surface_material_override/0 = SubResource("StandardMaterial3D_nkhbx")
 
@@ -385,6 +414,8 @@ shape = SubResource("BoxShape3D_vcv7a")
 
 [node name="Wall4" type="MeshInstance3D" parent="Scenario"]
 transform = Transform3D(-4.37114e-08, -0.5, -0.866025, 0, 0.866025, -0.5, 1, -2.18557e-08, -3.78552e-08, 597, 160, 0)
+material_override = SubResource("StandardMaterial3D_fhgjl")
+material_overlay = SubResource("StandardMaterial3D_0xe7f")
 mesh = ExtResource("18_llb0s")
 surface_material_override/0 = SubResource("StandardMaterial3D_nkhbx")
 
@@ -410,7 +441,7 @@ shape = SubResource("ConvexPolygonShape3D_8usvl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Scenario/Houseblock/House1"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, 0)
-material_override = SubResource("StandardMaterial3D_jolpo")
+material_override = SubResource("StandardMaterial3D_kufes")
 mesh = SubResource("PrismMesh_dsvbn")
 
 [node name="CollisionShape2" type="CollisionShape3D" parent="Scenario/Houseblock/House1"]

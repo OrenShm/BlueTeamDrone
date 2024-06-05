@@ -13,7 +13,7 @@ size = Vector3(10, 3, 6)
 points = PackedVector3Array(-5, -1.5, -3, -5, 1.5, -3, 5, -1.5, -3, -5, -1.5, 3, -5, 1.5, 3, 5, 1.5, -3, 5, -1.5, 3, 5, 1.5, 3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_id10b"]
-albedo_color = Color(0.666667, 0.4, 0.337255, 1)
+albedo_color = Color(0.856067, 0.856067, 0.856067, 1)
 
 [sub_resource type="PrismMesh" id="PrismMesh_5oun3"]
 size = Vector3(7, 2, 10)
