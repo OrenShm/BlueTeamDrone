@@ -14,6 +14,9 @@ func _ready():
 
 func shoot_projectile(start_pos: Vector3, destination: Vector3) -> void:
 	var direction = (destination - start_pos).normalized()
+	
+	self.look_at(destination, Vector3.UP, true)
+	
 	transform.origin = start_pos
 	velocity = direction * muzzle_velocity
 
