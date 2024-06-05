@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b0x2e85kmn1f8"
-path="res://.godot/imported/AIM120D.dae-ef4475df7e6843e7cfc45e88cf09a9df.scn"
+path="res://.godot/imported/AIM120D.dae-f8dd1b5137ccbf0472b6c745d23bb516.scn"
 
 [deps]
 
-source_file="res://assets/rockets_and_missiles/AIM120D Missile/Files/AIM120D.dae"
-dest_files=["res://.godot/imported/AIM120D.dae-ef4475df7e6843e7cfc45e88cf09a9df.scn"]
+source_file="res://assets/rockets_and_missiles/AIM120D_Missile/Files/AIM120D.dae"
+dest_files=["res://.godot/imported/AIM120D.dae-f8dd1b5137ccbf0472b6c745d23bb516.scn"]
 
 [params]
 

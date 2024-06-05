@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://rjbnks7lglvc"
+path="res://.godot/imported/Rockwall.obj-4c23e6e1380f112aec5e69beb480fbaa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Rockwall.obj-4c23e6e1380f112aec5e69beb480fbaa.mesh"]
+
+source_file="res://assets/topography/yl5cwt6eglq8-Rockwall/Rockwall.obj"
+dest_files=["res://.godot/imported/Rockwall.obj-4c23e6e1380f112aec5e69beb480fbaa.mesh", "res://.godot/imported/Rockwall.obj-4c23e6e1380f112aec5e69beb480fbaa.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
