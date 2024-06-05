@@ -2,6 +2,7 @@ extends MeshInstance3D
 
 var max_health = 1000
 var current_health = max_health
+var damage = 250
 
 func _ready():
 	pass

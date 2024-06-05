@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://uqiknq40ippn"]
 
 [ext_resource type="ArrayMesh" uid="uid://df5ycxbdl4ov8" path="res://vehicles/nagmash/5678.obj" id="1_3e604"]
-[ext_resource type="Script" path="res://vehicles/Area3D.gd" id="2_fxair"]
 [ext_resource type="Script" path="res://vehicles/nagmash.gd" id="2_vaj5w"]
+[ext_resource type="Script" path="res://vehicles/HitDetectorArea.gd" id="3_7mccn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_glg05"]
 
@@ -13,7 +13,7 @@ skeleton = NodePath("../../../..")
 script = ExtResource("2_vaj5w")
 
 [node name="Area3D" type="Area3D" parent="." groups=["nagmash"]]
-script = ExtResource("2_fxair")
+script = ExtResource("3_7mccn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(4, 0, 4.44089e-16, 0, -1.74846e-07, -4, 0, 4, -1.74846e-07, 0.00309038, 1.31465, -0.195724)

@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var camera : Camera3D
+@export var camera : Camera3D
 var head : Node3D
 
 var move_speed : float = 5.0
@@ -21,10 +21,10 @@ func _ready():
 	#Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	
 	# get our nodes and detatch the camera
-	camera = get_node("Camera3D")
+	#camera = get_node("Camera3D")
 	head = get_node("Head")
 	remove_child(camera)
-	get_node("/root/Main").add_child.call_deferred(camera)
+	$"..".add_child.call_deferred(camera)
 
 func _input(event):
 	# when we move the mouse
@@ -39,10 +39,9 @@ func _input(event):
 func _process(_delta):
 	# have the camera follow our head position
 	camera.position = head.global_position
+	print(camera.position)
 	
 func _physics_process(_delta):
-	
-	
 	# when we press SPACEBAR and we're on the ground, jump
 	if Input.is_action_just_pressed("move_up"):# and is_on_floor():
 		velocity.y = jump_force
