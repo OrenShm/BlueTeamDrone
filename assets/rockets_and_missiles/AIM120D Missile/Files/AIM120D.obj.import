@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c57bw8wxi8i80"
+path="res://.godot/imported/AIM120D.obj-7ac3c4ae3dff3fb339d1793da077544e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/AIM120D.obj-7ac3c4ae3dff3fb339d1793da077544e.mesh"]
+
+source_file="res://assets/rockets_and_missiles/AIM120D Missile/Files/AIM120D.obj"
+dest_files=["res://.godot/imported/AIM120D.obj-7ac3c4ae3dff3fb339d1793da077544e.mesh", "res://.godot/imported/AIM120D.obj-7ac3c4ae3dff3fb339d1793da077544e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
