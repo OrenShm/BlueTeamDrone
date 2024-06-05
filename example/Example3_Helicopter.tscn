@@ -1,8 +1,9 @@
-[gd_scene load_steps=83 format=3 uid="uid://bpgkoykhb386o"]
+[gd_scene load_steps=84 format=3 uid="uid://bpgkoykhb386o"]
 
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlSteering.tscn" id="1"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Controls/ControlLandingGear.tscn" id="2"]
 [ext_resource type="AudioStream" uid="uid://6iaidfdn83ye" path="res://example/sfx/aircraft_modules/engine/helicopter2.ogg" id="3"]
+[ext_resource type="PackedScene" uid="uid://8y7mnih7xjo7" path="res://example/scenes/AirplaneWeapons/AntiGroundLauncher.tscn" id="3_xcjwf"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Instruments/InstrumentAttitude.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://bmut2y2xaqj6x" path="res://example/ui/UIAltSpeed/UIAltSpeed.tscn" id="5"]
 [ext_resource type="Texture2D" uid="uid://dbpv3chq52qmh" path="res://example/textures/heli_pad.png" id="6"]
@@ -23,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://d0mgf4yjnwxgl" path="res://addons/simplified_flightsim/Aircraft/Aircraft.tscn" id="20"]
 [ext_resource type="PackedScene" uid="uid://bu2w4durp7w2a" path="res://vehicles/convoy.tscn" id="20_dsf4p"]
 [ext_resource type="PackedScene" uid="uid://bcs18mc4ikbf8" path="res://example/scenes/Ambush/AntiAir/AntiAirCannon.tscn" id="20_yaf8o"]
-[ext_resource type="PackedScene" uid="uid://cnl5gfvri0d4l" path="res://assets/weapons/pagaz.tscn" id="21_1pjnw"]
+[ext_resource type="PackedScene" path="res://assets/weapons/pagaz.tscn" id="21_1pjnw"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/EnergyContainer/EnergyContainer.tscn" id="22"]
 [ext_resource type="PackedScene" uid="uid://dvjox4cd58kgy" path="res://assets/weapons/land_mine.tscn" id="22_lpu1i"]
 [ext_resource type="AudioStream" uid="uid://cvxa8h3yftguj" path="res://example/sfx/aircraft_modules/landing_gear/deploy.wav" id="24"]
@@ -291,6 +292,8 @@ skeleton = NodePath("../..")
 [node name="MeshInstance3" type="MeshInstance3D" parent="Aircraft/Model/StaticParts"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98023e-08, 0.856681, -0.398773)
 mesh = SubResource("26")
+
+[node name="AntiGroundLauncher" parent="Aircraft/Model/StaticParts" instance=ExtResource("3_xcjwf")]
 
 [node name="MovingParts" type="Node3D" parent="Aircraft/Model"]
 

@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bh7geg2l47hhl"]
+
+[ext_resource type="Script" path="res://example/scenes/AirplaneWeapons/AirGroundMissile.gd" id="1_43rho"]
+[ext_resource type="ArrayMesh" uid="uid://dcvn1fl7rign" path="res://assets/rockets_and_missiles/hellfire/agm-114HellFire/Files/AGM-114HellFire.obj" id="1_g3yue"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1ki4"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.421939, 0.495466, 0.956567, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_583ei"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.421939, 0.495466, 0.956567, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tr00p"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.421939, 0.495466, 0.956567, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3bkwm"]
+size = Vector3(1.7, 1.7, 9)
+
+[node name="AirGroundMissile" type="Node3D"]
+script = ExtResource("1_43rho")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_g3yue")
+surface_material_override/0 = SubResource("StandardMaterial3D_g1ki4")
+surface_material_override/5 = SubResource("StandardMaterial3D_583ei")
+surface_material_override/6 = SubResource("StandardMaterial3D_tr00p")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="MeshInstance3D"]
+collision_layer = 2
+collision_mask = 2
+mass = 100.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.3, 0)
+shape = SubResource("BoxShape3D_3bkwm")
