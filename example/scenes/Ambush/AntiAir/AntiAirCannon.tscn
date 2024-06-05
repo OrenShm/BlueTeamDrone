@@ -7,7 +7,7 @@
 script = ExtResource("1_6vuaj")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 300.0
 autostart = true
 
 [node name="RpgRocketLuncher" parent="." instance=ExtResource("2_1yu0v")]
