@@ -2,7 +2,7 @@ extends Area3D
 
 var missile_scene = preload("res://assets/weapons/pagaz.tscn")
 var tank_scene = preload("res://vehicles/tank.tscn")
-var convoy_scene = preload("res://vehicles/convoy.tscn")
+#var convoy_scene = preload("res://vehicles/convoy.tscn")
 
 var timer : Timer 
 
@@ -28,6 +28,7 @@ func _on_body_entered(body):
 		#timer.start($"..".time_to_reload)
 		var missile_instance = missile_scene.instantiate()
 		var tank_instance = tank_scene.instantiate()
+		#tank_scene.get_node
 		# Set the position and direction of the missile
 		missile_instance.global_transform.origin = tank_instance.find_child("TankNode3D").global_transform.origin
 		missile_instance.global_transform.basis.z = tank_instance.find_child("TankNode3D").global_transform.basis.z

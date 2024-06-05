@@ -16,44 +16,44 @@ func _ready():
   #Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
   
   # get our nodes and detatch the camera
-  camera = get_node("Camera3D")
-  head = get_node("Head")
-  remove_child(camera)
-  get_node("/root/Main").add_child.call_deferred(camera)
+	camera = get_node("Camera3D")
+	head = get_node("Head")
+	remove_child(camera)
+	get_node("/root/Main").add_child.call_deferred(camera)
 func _input(event):
   # when we move the mouse
-  if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion:
 	# look up and down
-	camera.rotation_degrees.x += event.relative.y * -look_sens
-	camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, min_x_rot, max_x_rot)
+		camera.rotation_degrees.x += event.relative.y * -look_sens
+		camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, min_x_rot, max_x_rot)
 	
 	# look left and right
 	camera.rotation_degrees.y += event.relative.x * -look_sens
   
 func _process(delta):
   # have the camera follow our head position
-  camera.position = head.global_position
+	camera.position = head.global_position
   
 func _physics_process(delta):
   # if we are in the air, apply gravity
-  if not is_on_floor():
-	velocity.y -= gravity * delta
+	if not is_on_floor():
+		velocity.y -= gravity * delta
   
   # when we press SPACEBAR and we're on the ground, jump
-  if Input.is_action_just_pressed("jump") and is_on_floor():
-	velocity.y = jump_force
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = jump_force
   
   # get our movement inputs and calculate an input Vector2
-  var input = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+	var input = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
   
   # convert that to a movement direction relative to our camera
-  var dir = camera.basis.z * input.y + camera.basis.x * input.x
-  dir.y = 0
-  dir = dir.normalized()
+	var dir = camera.basis.z * input.y + camera.basis.x * input.x
+	dir.y = 0
+	dir = dir.normalized()
   
   # set our velocity
-  velocity.x = dir.x * move_speed
-  velocity.z = dir.z * move_speed
+	velocity.x = dir.x * move_speed
+	velocity.z = dir.z * move_speed
   
   # apply the velocity and move the player
-  move_and_slide()
+	move_and_slide()
