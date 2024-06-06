@@ -378,6 +378,7 @@ shadow_enabled = true
 directional_shadow_max_distance = 200.0
 
 [node name="Floor" type="MeshInstance3D" parent="Scenario"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, 1)
 material_override = SubResource("StandardMaterial3D_wa4yv")
 material_overlay = SubResource("StandardMaterial3D_u6s1b")
 mesh = SubResource("PlaneMesh_yjfxc")
@@ -743,6 +744,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.905, 0.579625, -135.311)
 
 [node name="AntiAirCannon" parent="Scenario" instance=ExtResource("20_yaf8o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -195.093, 1, -132.039)
+
+[node name="AntiAirCannon2" parent="Scenario" instance=ExtResource("20_yaf8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -193.093, 1, -123.039)
+
+[node name="AntiAirCannon3" parent="Scenario" instance=ExtResource("20_yaf8o")]
+transform = Transform3D(-0.866025, -0.5, -7.57103e-08, -0.5, 0.866025, -4.37114e-08, 8.74228e-08, 0, -1, -246.093, 1, -140.039)
+
+[node name="AntiAirCannon4" parent="Scenario" instance=ExtResource("20_yaf8o")]
+transform = Transform3D(-0.866025, -0.5, -7.57103e-08, -0.5, 0.866025, -4.37114e-08, 8.74228e-08, 0, -1, -200.093, 8, -132.039)
 
 [node name="Runway" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -216.931)
