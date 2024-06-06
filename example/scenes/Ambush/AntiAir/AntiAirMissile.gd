@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 	
 	var time_from_start = _get_time_sec() - start_time_sec
 	if (time_from_start > missile_timeout_sec):
-		print("Self distruction")
+#		print("Self distruction")
 		var explosion = explosion_scene.instantiate()
 		explosion.global_transform.origin = self.global_transform.origin
 		get_parent().add_child(explosion)
@@ -47,7 +47,6 @@ func _physics_process(delta: float) -> void:
 		
 	
 	if ((time_from_start) % retarget_time_sec == 0):
-		print("retargeting")
 		var airplaneNode = get_node_or_null("/root/Example/Aircraft")
 		if (airplaneNode != null):
 			shoot_projectile(self.position, airplaneNode.position)

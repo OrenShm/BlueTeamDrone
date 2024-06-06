@@ -6,7 +6,7 @@ var last_shot_time = 0.0
 var missile_offset_from_aircraft = Vector3(0, -1, 0)
 
 func fire_missile(target_position):
-	print("Lunching new missile from aircraft")
+	#print("Lunching new missile from aircraft")
 	var airplaneNode = get_node_or_null("/root/Example/Aircraft")
 	# TODO: Fetch it by father and not by get node!
 	if (airplaneNode != null):
