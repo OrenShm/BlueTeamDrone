@@ -14,14 +14,9 @@ func _check_ambushes():
 	!is_instance_valid($AntiAirCannon3)&&
 	!is_instance_valid($AntiAirCannon4)):
 		print("YOU WON!")
-		_add_song_to_parent()
-		await get_tree().create_timer(2.0).timeout
-		_add_song_to_parent()
-		await get_tree().create_timer(2.0).timeout
-		_add_song_to_parent()
-		await get_tree().create_timer(2.0).timeout
-		_add_song_to_parent()
-		await get_tree().create_timer(2.0).timeout
+		while(true):
+			_add_song_to_parent()
+			await get_tree().create_timer(2.0).timeout
 		self.queue_free()
 
 func _add_song_to_parent():

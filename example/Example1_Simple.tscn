@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://di4mmbdu6qiv1"]
+[gd_scene load_steps=82 format=3 uid="uid://di4mmbdu6qiv1"]
 
 [ext_resource type="Script" path="res://example/Example1_Simple.gd" id="1"]
 [ext_resource type="AudioStream" uid="uid://cvxa8h3yftguj" path="res://example/sfx/aircraft_modules/landing_gear/deploy.wav" id="2"]
@@ -35,6 +35,7 @@
 [ext_resource type="AudioStream" uid="uid://cqkqskpah2gx7" path="res://example/sfx/aircraft_modules/flaps/flap_loop.ogg" id="27"]
 [ext_resource type="PackedScene" uid="uid://dvjox4cd58kgy" path="res://assets/weapons/land_mine.tscn" id="27_j0722"]
 [ext_resource type="PackedScene" path="res://example/scenes/Airplane/visuals/Steering/Steering.tscn" id="28"]
+[ext_resource type="Script" path="res://example/Node3D.gd" id="28_xy1qd"]
 [ext_resource type="AudioStream" uid="uid://nwf4o8c8cui7" path="res://assets/PokemonSound.mp3" id="29_n6dty"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ryrq1"]
@@ -639,21 +640,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.511, 0.579625, -144.045)
 [node name="MeshInstance3D2" parent="Scenario" instance=ExtResource("27_j0722")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.905, 0.579625, -135.311)
 
-[node name="AntiAirCannon" parent="Scenario" instance=ExtResource("24_2mg1j")]
+[node name="GroundTargets" type="Node3D" parent="Scenario"]
+script = ExtResource("28_xy1qd")
+
+[node name="AntiAirCannon" parent="Scenario/GroundTargets" instance=ExtResource("24_2mg1j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285.346, 0.999992, -87.1992)
 
-[node name="AntiAirCannon2" parent="Scenario" instance=ExtResource("24_2mg1j")]
+[node name="AntiAirCannon2" parent="Scenario/GroundTargets" instance=ExtResource("24_2mg1j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -173.22, 1, -84.5231)
 
-[node name="AntiAirCannon3" parent="Scenario" instance=ExtResource("24_2mg1j")]
+[node name="AntiAirCannon3" parent="Scenario/GroundTargets" instance=ExtResource("24_2mg1j")]
 transform = Transform3D(-0.866025, -0.5, -7.57103e-08, -0.5, 0.866025, -4.37114e-08, 8.74228e-08, 0, -1, -251.778, 6.875, -119.884)
 
-[node name="AntiAirCannon4" parent="Scenario" instance=ExtResource("24_2mg1j")]
+[node name="AntiAirCannon4" parent="Scenario/GroundTargets" instance=ExtResource("24_2mg1j")]
 transform = Transform3D(-0.866025, -0.5, -7.57103e-08, -0.5, 0.866025, -4.37114e-08, 8.74228e-08, 0, -1, -190.349, 8, -127.914)
 
-[node name="GameOverSound" type="AudioStreamPlayer3D" parent="Scenario"]
+[node name="Timer" type="Timer" parent="Scenario/GroundTargets"]
+wait_time = 2.0
+autostart = true
+
+[node name="GameOverSound" type="AudioStreamPlayer3D" parent="Scenario/GroundTargets"]
 stream = ExtResource("29_n6dty")
 volume_db = 80.0
+max_db = 6.0
 
 [node name="Runway" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -216.931)
