@@ -20,6 +20,9 @@ func fire_missile(target_position):
 		missile_instance._shot_on_target(target_position)
 
 func _can_fire(shot_destination: Vector3):
+	if (shot_destination.y > 10):
+		return false
+		
 	shot_destination.y = 0
 	
 	var timenow_sec = Time.get_ticks_msec() / 1000.0

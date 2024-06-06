@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://di4mmbdu6qiv1"]
+[gd_scene load_steps=85 format=3 uid="uid://di4mmbdu6qiv1"]
 
 [ext_resource type="Script" path="res://example/Example1_Simple.gd" id="1"]
 [ext_resource type="AudioStream" uid="uid://cvxa8h3yftguj" path="res://example/sfx/aircraft_modules/landing_gear/deploy.wav" id="2"]
@@ -22,11 +22,13 @@
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Instruments/InstrumentAttitude.tscn" id="20"]
 [ext_resource type="Texture2D" uid="uid://bo81iive6ulsl" path="res://example/textures/kenney_prototypetextures/PNG/Light/texture_06.png" id="21_q2ulu"]
 [ext_resource type="PackedScene" uid="uid://bmut2y2xaqj6x" path="res://example/ui/UIAltSpeed/UIAltSpeed.tscn" id="22"]
+[ext_resource type="Texture2D" uid="uid://ducuti3ifqc7e" path="res://assets/topography/Stoney_dirt.jpg" id="22_3ar55"]
 [ext_resource type="PackedScene" uid="uid://c31ajgolcc6h6" path="res://example/scenes/GazaLayout/GazaLayer.tscn" id="22_3g21e"]
 [ext_resource type="Texture2D" uid="uid://d3w7kvckn8jf6" path="res://example/textures/faux_asphalt/ground_asphalt_synth_12.png" id="22_rjld5"]
 [ext_resource type="PackedScene" uid="uid://c4dncgm8qjt7u" path="res://example/ui/UIFlaps/UIFlaps.tscn" id="23"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Flaps/Flaps.tscn" id="24"]
 [ext_resource type="PackedScene" uid="uid://bcs18mc4ikbf8" path="res://example/scenes/Ambush/AntiAir/AntiAirCannon.tscn" id="24_2mg1j"]
+[ext_resource type="Texture2D" uid="uid://duqv3k6g2hdgl" path="res://assets/topography/q7dl0kza.png" id="24_7aq44"]
 [ext_resource type="Script" path="res://example/PathFollow3D.gd" id="24_vjyhv"]
 [ext_resource type="PackedScene" uid="uid://b8s77ar81hq22" path="res://example/ui/UILandingGear/UILandingGear.tscn" id="25"]
 [ext_resource type="PackedScene" uid="uid://bu2w4durp7w2a" path="res://vehicles/convoy.tscn" id="25_nq4g5"]
@@ -76,7 +78,7 @@ size = Vector3(1.6, 1.4, 3.4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldf4x"]
 albedo_color = Color(0.8, 0.65098, 0.380392, 1)
-albedo_texture = ExtResource("21_q2ulu")
+albedo_texture = ExtResource("22_3ar55")
 uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_myovo"]
@@ -90,6 +92,9 @@ size = Vector2(640, 640)
 
 [sub_resource type="BoxShape3D" id="3"]
 size = Vector3(640, 2, 640)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vayxo"]
+albedo_texture = ExtResource("24_7aq44")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggaxk"]
 albedo_color = Color(0.839216, 0.72549, 0.611765, 1)
@@ -301,6 +306,7 @@ shape = SubResource("3")
 
 [node name="Wall1" type="MeshInstance3D" parent="Scenario"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 160, -597)
+material_overlay = SubResource("StandardMaterial3D_vayxo")
 mesh = SubResource("1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scenario/Wall1"]
@@ -311,6 +317,7 @@ shape = SubResource("3")
 
 [node name="Wall2" type="MeshInstance3D" parent="Scenario"]
 transform = Transform3D(-1, -4.37114e-08, -7.57103e-08, 0, 0.866025, -0.5, 8.74228e-08, -0.5, -0.866025, 0, 160, 597)
+material_overlay = SubResource("StandardMaterial3D_vayxo")
 mesh = SubResource("1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scenario/Wall2"]
@@ -321,6 +328,7 @@ shape = SubResource("3")
 
 [node name="Wall3" type="MeshInstance3D" parent="Scenario"]
 transform = Transform3D(-4.37114e-08, 0.5, 0.866025, 0, 0.866025, -0.5, -1, -2.18557e-08, -3.78552e-08, -597, 160, 0)
+material_overlay = SubResource("StandardMaterial3D_vayxo")
 mesh = SubResource("1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scenario/Wall3"]
@@ -331,6 +339,7 @@ shape = SubResource("3")
 
 [node name="Wall4" type="MeshInstance3D" parent="Scenario"]
 transform = Transform3D(-4.37114e-08, -0.5, -0.866025, 0, 0.866025, -0.5, 1, -2.18557e-08, -3.78552e-08, 597, 160, 0)
+material_overlay = SubResource("StandardMaterial3D_vayxo")
 mesh = SubResource("1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Scenario/Wall4"]

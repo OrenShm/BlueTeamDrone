@@ -12,11 +12,14 @@ size = Vector3(0.874725, 0.682602, 16.6929)
 
 [node name="AntiAirMissile" type="MeshInstance3D"]
 transform = Transform3D(0.15, 0, 0, 0, -6.55671e-09, 0.15, 0, -0.15, -6.55671e-09, 0, 0, 0)
+layers = 7
 mesh = ExtResource("1_vhj44")
 surface_material_override/0 = SubResource("StandardMaterial3D_wnb03")
 script = ExtResource("2_5uorj")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 7
+collision_mask = 7
 mass = 500.0
 freeze = true
 metadata/_edit_group_ = true

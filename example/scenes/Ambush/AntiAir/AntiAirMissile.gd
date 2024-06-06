@@ -1,6 +1,6 @@
 extends MeshInstance3D
 
-var muzzle_velocity: float = 1
+var muzzle_velocity: float = 3
 var gravity: Vector3 = Vector3(0, 0, 0)
 var velocity: Vector3 = Vector3.ZERO
 var start_time_sec: int = 0
@@ -51,6 +51,16 @@ func _physics_process(delta: float) -> void:
 		if (airplaneNode != null):
 			shoot_projectile(self.position, airplaneNode.position)
 
+func _missile_kill():
+	#print("missile killed on ground")
+	var new_explosion = explosion_scene.instantiate()
+	new_explosion.global_transform.origin = self.global_transform.origin
+	get_parent().add_child(new_explosion)
+	new_explosion.explode()
+	queue_free()
+
+func _on_rigid_body_3d_body_entered(body):
+	_missile_kill()
 
 # Example usage:
 # Call shoot_projectile(start_position, destination_position) to simulate shooting.
