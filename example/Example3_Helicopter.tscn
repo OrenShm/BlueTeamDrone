@@ -378,7 +378,6 @@ shadow_enabled = true
 directional_shadow_max_distance = 200.0
 
 [node name="Floor" type="MeshInstance3D" parent="Scenario"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, 1)
 material_override = SubResource("StandardMaterial3D_wa4yv")
 material_overlay = SubResource("StandardMaterial3D_u6s1b")
 mesh = SubResource("PlaneMesh_yjfxc")
