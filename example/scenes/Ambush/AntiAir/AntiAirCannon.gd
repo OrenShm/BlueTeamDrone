@@ -18,7 +18,7 @@ func _on_launch_timer_elapsed():
 	if (_aircraft_in_range()):
 		var missile_instance = preload("res://example/scenes/Ambush/AntiAir/AntiAirMissile.tscn").instantiate()
 		missile_instance.position = self.position# + Vector3(0,0,10)
-		print("Lunching new missile")
+		#print("Lunching new missile")
 		self.get_parent().add_child(missile_instance)
 
 func _on_launcher_hit():

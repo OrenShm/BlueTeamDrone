@@ -15,7 +15,7 @@ func _process(delta):
 		_missile_kill()
 
 func _missile_kill():
-	print("missile killed on ground")
+	#print("missile killed on ground")
 	var new_explosion = template_explosion.instantiate()
 	new_explosion.global_transform.origin = self.global_transform.origin
 	get_parent().add_child(new_explosion)
