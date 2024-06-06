@@ -743,10 +743,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.511, 0.579625, -144.045)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.905, 0.579625, -135.311)
 
 [node name="AntiAirCannon" parent="Scenario" instance=ExtResource("20_yaf8o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -195.093, 1, -132.039)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -274.332, 0.999992, -92.3693)
 
 [node name="AntiAirCannon2" parent="Scenario" instance=ExtResource("20_yaf8o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -193.093, 1, -123.039)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -178.797, 1, -84.5231)
 
 [node name="AntiAirCannon3" parent="Scenario" instance=ExtResource("20_yaf8o")]
 transform = Transform3D(-0.866025, -0.5, -7.57103e-08, -0.5, 0.866025, -4.37114e-08, 8.74228e-08, 0, -1, -246.093, 1, -140.039)

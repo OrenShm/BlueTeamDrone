@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcs18mc4ikbf8"]
+[gd_scene load_steps=7 format=3 uid="uid://bcs18mc4ikbf8"]
 
 [ext_resource type="Script" path="res://example/scenes/Ambush/AntiAir/AntiAirCannon.gd" id="1_6vuaj"]
+[ext_resource type="PackedScene" uid="uid://cpbeevno2h3o8" path="res://assets/rifles_and_rocket_launchers/RPG_1/Rpg 7/Rpg 7 3D Models/Rpg7.FBX" id="2_1yu0v"]
 [ext_resource type="ArrayMesh" uid="uid://su5rkkbc0boy" path="res://assets/rifles_and_rocket_launchers/RPG_1/Rpg 7/Rpg 7 3D Models/Rpg7.obj" id="2_pgubg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h5tiv"]
@@ -12,8 +13,8 @@ vertex_color_use_as_albedo = true
 albedo_color = Color(0.614731, 0.0561991, 0.164802, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i6q1n"]
-radius = 783.069
-height = 3879.41
+radius = 158.0
+height = 2046.43
 
 [node name="AntiAirCannon" type="Node3D"]
 script = ExtResource("1_6vuaj")
@@ -28,14 +29,14 @@ mesh = ExtResource("2_pgubg")
 surface_material_override/0 = SubResource("StandardMaterial3D_h5tiv")
 surface_material_override/1 = SubResource("StandardMaterial3D_sfhbg")
 
+[node name="RpgRocketLuncher" parent="MeshInstance3D" instance=ExtResource("2_1yu0v")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+visible = false
+
 [node name="RigidBody3D" type="RigidBody3D" parent="MeshInstance3D"]
 collision_layer = 2
 collision_mask = 2
-gravity_scale = 0.0
-metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/RigidBody3D"]
-transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0.358487, -5.90837, 187.473)
 shape = SubResource("CapsuleShape3D_i6q1n")
-
-[connection signal="body_entered" from="MeshInstance3D/RigidBody3D" to="." method="_on_rigid_body_3d_body_entered"]

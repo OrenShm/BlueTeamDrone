@@ -19,6 +19,7 @@ script = ExtResource("2_5uorj")
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 mass = 500.0
 freeze = true
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(5, 0, 0, 0, -5, 4.37114e-07, 0, -4.37114e-07, -5, 2.59574, 5.02276, -4.4867)
