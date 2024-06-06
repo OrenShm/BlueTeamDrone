@@ -24,10 +24,6 @@ window/stretch/aspect="keep_height"
 
 enabled=PackedStringArray("res://addons/simplified_flightsim/plugin.cfg")
 
-[filesystem]
-
-import/fbx/enabled=false
-
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
