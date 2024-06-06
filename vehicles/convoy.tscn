@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bu2w4durp7w2a"]
 
 [ext_resource type="PackedScene" uid="uid://uqiknq40ippn" path="res://vehicles/nagmash.tscn" id="1_0t1f8"]
-[ext_resource type="PackedScene" uid="uid://dsr578y3el43f" path="res://vehicles/tank.tscn" id="2_4nah8"]
+[ext_resource type="PackedScene" uid="uid://b1f3is36fyaau" path="res://vehicles/tank.tscn" id="2_4nah8"]
 [ext_resource type="PackedScene" uid="uid://7w8n0vbuh1pi" path="res://vehicles/truck.tscn" id="3_1snri"]
 
 [node name="convoy" type="Node3D"]

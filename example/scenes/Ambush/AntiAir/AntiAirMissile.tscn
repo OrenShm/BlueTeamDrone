@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7d7squ15lrr6"]
+[gd_scene load_steps=6 format=3 uid="uid://b7d7squ15lrr6"]
 
-[ext_resource type="ArrayMesh" uid="uid://c57bw8wxi8i80" path="res://assets/rockets_and_missiles/AIM120D Missile/Files/AIM120D.obj" id="1_vhj44"]
+[ext_resource type="ArrayMesh" uid="uid://c57bw8wxi8i80" path="res://assets/rockets_and_missiles/AIM120D_Missile/Files/AIM120D.obj" id="1_vhj44"]
 [ext_resource type="Script" path="res://example/scenes/Ambush/AntiAir/AntiAirMissile.gd" id="2_5uorj"]
+[ext_resource type="Script" path="res://example/scenes/Ambush/AntiAir/RigidBody3D.gd" id="3_fttr0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnb03"]
 vertex_color_use_as_albedo = true
@@ -19,7 +20,13 @@ script = ExtResource("2_5uorj")
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 mass = 500.0
 freeze = true
+script = ExtResource("3_fttr0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(5, 0, 0, 0, -5, 4.37114e-07, 0, -4.37114e-07, -5, 2.59574, 5.02276, -4.4867)
 shape = SubResource("BoxShape3D_4yvvs")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+
+[connection signal="body_entered" from="RigidBody3D" to="." method="_on_rigid_body_3d_body_entered"]

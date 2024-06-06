@@ -7,6 +7,10 @@ var velocity: Vector3 = Vector3.ZERO
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Timer.connect("timeout", Callable(self, "_timeout_missile_kill"))
+	$Timer.autostart = true
+	$Timer.wait_time = 30
+	$Timer.start()
 	var airplaneNode = get_node_or_null("/root/Example/Aircraft")
 	if (airplaneNode != null):
 		shoot_projectile(self.position, airplaneNode.position)
@@ -34,8 +38,18 @@ func _physics_process(delta: float) -> void:
 # Call shoot_projectile(start_position, destination_position) to simulate shooting.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-
+func _process(delta):
+	if self.position.y == 0:
+		_timeout_missile_kill()
+		
+func _timeout_missile_kill():
+	print("missile kiiled")
+	var template_explosion = preload("res://example/scenes/Explosion/Explosion.tscn")
+	var new_explosion = template_explosion.instantiate()
+	add_child(new_explosion)
+	new_explosion.global_transform.origin = self.global_transform.origin
+	new_explosion.explode()
+	queue_free()
 	
 	#lerp()
 		#
@@ -66,3 +80,7 @@ func _physics_process(delta: float) -> void:
 ## Example usage:
 ## Call shoot_projectile(start_position, destination_position) to simulate shooting.
 ## Adjust muzzle_velocity and gravity as needed.
+
+
+func _on_rigid_body_3d_body_entered(body):
+	_timeout_missile_kill()
