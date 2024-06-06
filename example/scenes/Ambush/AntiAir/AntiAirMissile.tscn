@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7d7squ15lrr6"]
 
-[ext_resource type="ArrayMesh" path="res://assets/rockets_and_missiles/AIM120D Missile/Files/AIM120D.obj" id="1_vhj44"]
+[ext_resource type="ArrayMesh" uid="uid://c57bw8wxi8i80" path="res://assets/rockets_and_missiles/AIM120D Missile/Files/AIM120D.obj" id="1_vhj44"]
 [ext_resource type="Script" path="res://example/scenes/Ambush/AntiAir/AntiAirMissile.gd" id="2_5uorj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wnb03"]

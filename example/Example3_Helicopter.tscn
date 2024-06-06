@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://d0mgf4yjnwxgl" path="res://addons/simplified_flightsim/Aircraft/Aircraft.tscn" id="20"]
 [ext_resource type="PackedScene" uid="uid://bu2w4durp7w2a" path="res://vehicles/convoy.tscn" id="20_dsf4p"]
 [ext_resource type="PackedScene" uid="uid://bcs18mc4ikbf8" path="res://example/scenes/Ambush/AntiAir/AntiAirCannon.tscn" id="20_yaf8o"]
-[ext_resource type="PackedScene" path="res://assets/weapons/pagaz.tscn" id="21_1pjnw"]
+[ext_resource type="PackedScene" uid="uid://cnl5gfvri0d4l" path="res://assets/weapons/pagaz.tscn" id="21_1pjnw"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/EnergyContainer/EnergyContainer.tscn" id="22"]
 [ext_resource type="PackedScene" uid="uid://dvjox4cd58kgy" path="res://assets/weapons/land_mine.tscn" id="22_lpu1i"]
 [ext_resource type="AudioStream" uid="uid://cvxa8h3yftguj" path="res://example/sfx/aircraft_modules/landing_gear/deploy.wav" id="24"]
