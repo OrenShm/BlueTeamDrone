@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://di4mmbdu6qiv1"]
+[gd_scene load_steps=81 format=3 uid="uid://di4mmbdu6qiv1"]
 
 [ext_resource type="Script" path="res://example/Example1_Simple.gd" id="1"]
 [ext_resource type="AudioStream" uid="uid://cvxa8h3yftguj" path="res://example/sfx/aircraft_modules/landing_gear/deploy.wav" id="2"]
@@ -25,13 +25,17 @@
 [ext_resource type="PackedScene" uid="uid://c31ajgolcc6h6" path="res://example/scenes/GazaLayout/GazaLayer.tscn" id="22_3g21e"]
 [ext_resource type="Texture2D" uid="uid://d3w7kvckn8jf6" path="res://example/textures/faux_asphalt/ground_asphalt_synth_12.png" id="22_rjld5"]
 [ext_resource type="PackedScene" uid="uid://c4dncgm8qjt7u" path="res://example/ui/UIFlaps/UIFlaps.tscn" id="23"]
-[ext_resource type="PackedScene" uid="uid://blupttwov1xx4" path="res://example/scenes/PathFollowExample/PathFollowExample.tscn" id="23_fksu0"]
 [ext_resource type="PackedScene" path="res://addons/simplified_flightsim/aircraft_modules/Flaps/Flaps.tscn" id="24"]
 [ext_resource type="PackedScene" uid="uid://bcs18mc4ikbf8" path="res://example/scenes/Ambush/AntiAir/AntiAirCannon.tscn" id="24_2mg1j"]
+[ext_resource type="Script" path="res://example/PathFollow3D.gd" id="24_vjyhv"]
 [ext_resource type="PackedScene" uid="uid://b8s77ar81hq22" path="res://example/ui/UILandingGear/UILandingGear.tscn" id="25"]
+[ext_resource type="PackedScene" uid="uid://bu2w4durp7w2a" path="res://vehicles/convoy.tscn" id="25_nq4g5"]
 [ext_resource type="PackedScene" uid="uid://dhg4sb4ifrvh8" path="res://example/ui/UIAttitude/UIAttitude.tscn" id="26"]
+[ext_resource type="PackedScene" uid="uid://cnl5gfvri0d4l" path="res://assets/weapons/pagaz.tscn" id="26_y01vb"]
 [ext_resource type="AudioStream" uid="uid://cqkqskpah2gx7" path="res://example/sfx/aircraft_modules/flaps/flap_loop.ogg" id="27"]
+[ext_resource type="PackedScene" uid="uid://dvjox4cd58kgy" path="res://assets/weapons/land_mine.tscn" id="27_j0722"]
 [ext_resource type="PackedScene" path="res://example/scenes/Airplane/visuals/Steering/Steering.tscn" id="28"]
+[ext_resource type="AudioStream" uid="uid://nwf4o8c8cui7" path="res://assets/PokemonSound.mp3" id="29_n6dty"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ryrq1"]
 
@@ -154,6 +158,15 @@ size = Vector3(12, 30, 15)
 
 [sub_resource type="ConvexPolygonShape3D" id="18"]
 points = PackedVector3Array(6, 15, 7.5, -6, 15, 7.5, 6, -15, 7.5, 6, 15, -7.5, -6, 15, -7.5, -6, -15, 7.5, 6, -15, -7.5, -6, -15, -7.5)
+
+[sub_resource type="Curve3D" id="Curve3D_kvn61"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -236.251, 0, -161.581, -8.877, 0, -3.212, 8.877, 0, 3.212, -235.824, 0, -95.0971, 0, 0, 0, 0, 0, 0, -120.092, 0, -96.1433),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="BoxMesh" id="BoxMesh_gxygy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ot0j3"]
 albedo_texture = ExtResource("22_rjld5")
@@ -598,10 +611,49 @@ shape = SubResource("18")
 
 [node name="GazasLayer" parent="Scenario" instance=ExtResource("22_3g21e")]
 
-[node name="Convoy" parent="Scenario" instance=ExtResource("23_fksu0")]
+[node name="Path3D" type="Path3D" parent="Scenario"]
+curve = SubResource("Curve3D_kvn61")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Scenario/Path3D"]
+transform = Transform3D(-0.999979, 0, -0.00642239, 0, 1, 0, 0.00642239, 0, -0.999979, -236.251, 0, -161.581)
+loop = false
+script = ExtResource("24_vjyhv")
+
+[node name="convoy" parent="Scenario/Path3D/PathFollow3D" instance=ExtResource("25_nq4g5")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Scenario/Path3D/PathFollow3D/convoy"]
+transform = Transform3D(-0.921633, 0, -0.388063, 0, 1, 0, 0.388063, 0, -0.921633, -18.3747, 6.99927, -5.6779)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scenario/Path3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -238.346, 0.556713, -95.2118)
+mesh = SubResource("BoxMesh_gxygy")
+
+[node name="pagaz" parent="Scenario" instance=ExtResource("26_y01vb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -238.346, 3.45439, -95.2118)
+skeleton = NodePath("../Path3D/MeshInstance3D")
+
+[node name="MeshInstance3D" parent="Scenario" instance=ExtResource("27_j0722")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.511, 0.579625, -144.045)
+
+[node name="MeshInstance3D2" parent="Scenario" instance=ExtResource("27_j0722")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -235.905, 0.579625, -135.311)
 
 [node name="AntiAirCannon" parent="Scenario" instance=ExtResource("24_2mg1j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -195.25, 0, -128.446)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285.346, 0.999992, -87.1992)
+
+[node name="AntiAirCannon2" parent="Scenario" instance=ExtResource("24_2mg1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -173.22, 1, -84.5231)
+
+[node name="AntiAirCannon3" parent="Scenario" instance=ExtResource("24_2mg1j")]
+transform = Transform3D(-0.866025, -0.5, -7.57103e-08, -0.5, 0.866025, -4.37114e-08, 8.74228e-08, 0, -1, -251.778, 6.875, -119.884)
+
+[node name="AntiAirCannon4" parent="Scenario" instance=ExtResource("24_2mg1j")]
+transform = Transform3D(-0.866025, -0.5, -7.57103e-08, -0.5, 0.866025, -4.37114e-08, 8.74228e-08, 0, -1, -190.349, 8, -127.914)
+
+[node name="GameOverSound" type="AudioStreamPlayer3D" parent="Scenario"]
+stream = ExtResource("29_n6dty")
+volume_db = 80.0
 
 [node name="Runway" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -216.931)
