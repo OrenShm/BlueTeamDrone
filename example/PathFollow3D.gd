@@ -29,7 +29,7 @@ func stop_moving():
 	
 func _input(event):
 	if event is InputEventKey:
-		if event.pressed and event.unicode == KEY_1:
+		if event.pressed and event.unicode == KEY_9:
 			if is_moving:
 				stop_moving()
 			else:
