@@ -4,7 +4,7 @@ extends PathFollow3D
 @export var set_speed: float = 0.1
 var moving_forward: bool = true
 var is_moving: bool = false
-var start_moving_distance: int = 200
+var start_moving_distance: int = 100
 
 func _aircraft_in_range():
 	var aircraft = get_node_or_null("/root/Example/Aircraft")
